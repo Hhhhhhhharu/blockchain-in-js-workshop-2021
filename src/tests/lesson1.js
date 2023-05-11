@@ -40,14 +40,9 @@ const main = () => {
   // 添加两个区块高度为 2  的的竞争区块
   blockchain.blocks[nextBlock.hash] = nextBlock
   blockchain.blocks[nextCompetitionBlock.hash] = nextCompetitionBlock
-<<<<<<< Updated upstream
-  
-  //定义这个数组等于最长连
-=======
 
   console.log()
 
->>>>>>> Stashed changes
   let longestChain = blockchain.longestChain()
 
   //最长的链应该有两个块，否则输出错误信息

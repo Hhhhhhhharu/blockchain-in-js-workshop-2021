@@ -7,18 +7,11 @@ class Block {
    哈希
   */
   constructor(blockchain,previousHash,height,hash) {
-<<<<<<< Updated upstream
     this.blockchain=blockchain;
     this.previousHash=previousHash;
     this.height=height
     this.hash=hash
 
-=======
-    this.blockchain=blockchain
-    this.previousHash=previousHash
-    this.height=height
-    this.hash=hash
->>>>>>> Stashed changes
   }
 }
 
