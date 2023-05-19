@@ -42,7 +42,11 @@ https://github.com/Hhhhhhhharu/blockchain-in-js-workshop-2021/commit/62e94514f27
 我们先定义了一个名为 Blockchain 的类，它是一个区块链数据结构的实现。
 我们再实现了constructor(name)方法，创建一个新的区块链对象，传入一个名字参数 name，初始时 genesis 属性为 null，blocks 属性为一个空对象。
 然后实现longestChain()方法:，用于返回当前链中最长的区块信息列表。它遍历了所有的区块，找到链中高度最高的区块作为起始点，然后迭代查找前一区块，直到找到创世区块为止，最后返回整条链。
+<<<<<<< Updated upstream
 Block类定义了相关的情况属性：包括所属区块链 父块哈希 高度 哈希
+=======
+Block类定义了相关的情况属性：包括所属区块链，父块哈希，高度，哈希
+>>>>>>> Stashed changes
 
 
 
