@@ -62,6 +62,7 @@ const main = () => {
     nextBlock.hash,
     3,
     sha256(new Date().getTime().toString()).toString(),
+    miner
   )
 
   thirdBlock = calcNonce(thirdBlock)
@@ -83,6 +84,7 @@ const main = () => {
     blockchain.containsBlock(thirdBlock) == true,
     'Error: blockchain should contain third block',
   )
+  
 
   console.log(thirdBlock.utxoPool)
   console.assert(

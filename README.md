@@ -101,12 +101,30 @@ PoW优势：
 > 将截图上传至网盘，放入链接即可
 
 ![](链接)
+![VDKMNE.png](https://i.imgloc.com/2023/05/26/VDKMNE.png)
+![VDKL4Q.png](https://i.imgloc.com/2023/05/26/VDKL4Q.png)
+![VDKPhC.png](https://i.imgloc.com/2023/05/26/VDKPhC.png)
+![VDKTuP.png](https://i.imgloc.com/2023/05/26/VDKTuP.png)
+![VDK1HX.png](https://i.imgloc.com/2023/05/26/VDK1HX.png)
+![VDKQet.png](https://i.imgloc.com/2023/05/26/VDKQet.png)
+![VDKYTJ.png](https://i.imgloc.com/2023/05/26/VDKYTJ.png)
+![VDKukc.png](https://i.imgloc.com/2023/05/26/VDKukc.png)
+![VDLZBA.png](https://i.imgloc.com/2023/05/26/VDLZBA.png)
+![VDLi9o.png](https://i.imgloc.com/2023/05/26/VDLi9o.png)
+![VDLfAN.png](https://i.imgloc.com/2023/05/26/VDLfAN.png)
+![VDLyrV.png](https://i.imgloc.com/2023/05/26/VDLyrV.png)
+![VDL4hd.png](https://i.imgloc.com/2023/05/26/VDL4hd.png)
+
 
 
 ### 主观与讨论题内容
 
+理解区块中的交易存储和 UTXO 的继承结构:
+UTXO (Unspent Transaction Output) 是指未被使用的交易输出。当一个新的交易被创建时，它会引用之前的 UTXO。在交易被验证之后，它会消耗掉对应的 UTXO，并创建新的 UTXO，以便其他人可以使用这些比特币。这些新的 UTXO 会被添加到当前区块的 UTXO 集合中，并成为下一个区块的继承基础。
 
-
+理解 coinbase 交易:
+Coinbase 交易是比特币区块链中一种特殊的交易，它会在每个新的区块中被创建，作为区块奖励和交易手续费的来源。它不需要引用之前的交易输出，而是会创建新的比特币。每个 Coinbase 交易会包含一个新的比特币地址和一定数量的比特币，这些比特币会被添加到当前区块链中的 UTXO 集合中。此外，Coinbase 交易还会包含一些额外的数据，例如区块的高度和时间戳等信息。
+在比特币网络中，每当一个区块被成功添加到区块链中，创建这个区块的矿工会获得一定数量的比特币作为奖励。这个奖励数量最初是 50 BTC，但在比特币协议中有一个规定，每隔一段时间（目前是 210,000 个区块）就会减半一次，直到最终总量达到 21,000,000 BTC。目前（2023年5月），区块奖励已经减半至 6.25 BTC。
 ---
 
 

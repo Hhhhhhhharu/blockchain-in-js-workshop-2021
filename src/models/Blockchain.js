@@ -1,64 +1,65 @@
-// Blockchain
+import UTXOPool from './UTXOPool.js'
+
 class Blockchain {
-  // 1. 完成构造函数及其参数
-  /* 构造函数需要包含 
-      - 名字
-      - 创世区块
-      - 存储区块的映射
-  */
   constructor(name) {
-    this.name = name; // 区块链的名字
-    this.genesis = null; // 创世区块
-    this.blocks = {}; // 存储区块的映射
+    this.name = name
+    this.blocks = {}
+    this.genesis = null
+    this.utxoPool = new UTXOPool()
+
   }
 
-  // 2. 定义 longestChain 函数
-  /* 返回当前链中最长的区块信息列表 */
   longestChain() {
-    let longestChain = []; // 用于存储最长的区块信息列表
-    let nextBlocks = Object.values(this.blocks); // 获取当前区块链中所有的区块信息
-    let temp = this.genesis; // 用于临时存储当前最长的区块信息
-
-    // 遍历所有区块信息，找到当前最长的区块信息
-    nextBlocks.forEach(function(block) {
-      if (temp.height < block.height) {
-        temp = block;
-      }
-    });
-
-    // 从当前最长的区块信息开始向前查找所有的区块信息，构成最长的区块信息列表
-    while (temp.previousHash !== "root") {
-      longestChain.push(temp);
-      temp = this.blocks[temp.previousHash];
+    const longestChain = []
+    let block = this.maxHeightBlock()
+    while (block) {
+      longestChain.push(block)
+      block = this.blocks[block.previousHash]
     }
-    longestChain.push(temp); // 加入创世区块
-    longestChain.reverse(); // 将列表反转，以得到最长的区块信息列表
-    return longestChain;
+    return longestChain.reverse()
   }
 
-   // 判断当前区块链是否包含
-   containsBlock(block) {
-    // 添加判断方法
-    return false
+  containsBlock(block) {
+    return block.hash in this.blocks
   }
 
-  // 获得区块高度最高的区块
   maxHeightBlock() {
-    // return Block
+    let maxHeight = -1
+    let maxHeightBlock = null
+    for (const hash in this.blocks) {
+      if (this.blocks[hash].height > maxHeight) {
+        maxHeight = this.blocks[hash].height
+        maxHeightBlock = this.blocks[hash]
+      }
+    }
+    return maxHeightBlock
   }
 
-  // 添加区块
-  /*
 
-  */
-  _addBlock(block) {
+    _addBlock(block) {
     if (!block.isValid()) return
     if (this.containsBlock(block)) return
-    
-    // 添加 UTXO 快照与更新的相关逻辑
+
+     // 添加 UTXO 快照与更新的相关逻辑
+    var currentBlock = this.maxHeightBlock()
+    let utxoPool = new UTXOPool()
+    if(currentBlock == null){
+      utxoPool.addUTXO(block.coinbaseBeneficiary,0,0)
+      block.utxoPool = utxoPool
+    }else{
+      
+      let currentUTXOPool = currentBlock.utxoPool
+      currentUTXOPool.addUTXO(block.coinbaseBeneficiary,0,0)
+      block.utxoPool = currentUTXOPool
+    }
+   
+    this.blocks[block.hash] = block
+
   }
 
-
+  getUTXOPool() {
+    return this.utxoPool.clone()
+  }
 }
 
-export default Blockchain;
+export default Blockchain
