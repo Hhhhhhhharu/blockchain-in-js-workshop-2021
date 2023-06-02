@@ -31,6 +31,9 @@ https://github.com/CUITBlockchain/blockchain-in-js-workshop-2021/commit/25f3a0d8
 
 
 ### 主观与讨论题内容
+hash函数我们通过运用sha256来实现
+
+
 
 ---
 
