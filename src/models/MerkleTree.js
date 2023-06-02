@@ -39,10 +39,14 @@ class MerkleTree {
       const proof = [];
       for (let i = 0; i < this.levels.length - 1; i++) {
         const level = this.levels[i];
-        const isRightNode = index % 2;//判断是否为叶子节点，如果是右子节点，则为1
+        const isRightNode = index % 2;//判断是否为右子节点，如果是右子节点，则为1
         const siblingIndex = isRightNode ? index - 1 : index + 1;
         if (siblingIndex < level.length) {
-          proof.push(isRightNode ? level[siblingIndex] : level[index]).toString();
+            //如果有兄弟节点，记录兄弟节点的哈希值
+          proof.push(sha256(level[siblingIndex]).toString()).toString();
+        }else{
+            //如果没有兄弟节点，记录当前节点的哈希值
+            proof.push(sha256(level[isRightNode ? index : index - 1]).toString());
         }
         index = Math.floor(index / 2);
       }
@@ -59,13 +63,13 @@ class MerkleTree {
   }
   
   // 示例代码
-  const elements = ['a', 'b', 'c', 'd', 'e'];
+  const elements = ['a', 'b', 'c', 'd','e'];
   const tree = new MerkleTree(elements);
-  console.log(tree.root);
+  console.log('Root:',tree.root);
   
-  const index = 3;
+  const index = 4;
   const proof = tree.getProof(index);
-  console.log(proof);
+  console.log('Proof:',proof);
   
   const isVerified = tree.verify(elements[index], proof);
-  console.log(isVerified);
+  console.log('Is Verified:',isVerified);
