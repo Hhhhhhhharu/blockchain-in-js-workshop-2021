@@ -143,11 +143,34 @@ https://github.com/CUITBlockchain/blockchain-in-js-workshop-2021/commit/25f3a0d8
 > 将截图上传至网盘，放入链接即可
 
 ![](链接)
+[![V0DYpw.png](https://i.imgloc.com/2023/06/02/V0DYpw.png)](https://imgloc.com/i/V0DYpw)
+[![V0DQWz.png](https://i.imgloc.com/2023/06/02/V0DQWz.png)](https://imgloc.com/i/V0DQWz)
+[![V0Dqva.png](https://i.imgloc.com/2023/06/02/V0Dqva.png)](https://imgloc.com/i/V0Dqva)
+[![V0UZ4x.png](https://i.imgloc.com/2023/06/02/V0UZ4x.png)](https://imgloc.com/i/V0UZ4x)
+[![V0UiNk.png](https://i.imgloc.com/2023/06/02/V0UiNk.png)](https://imgloc.com/i/V0UiNk)
+[![V0UVdL.png](https://i.imgloc.com/2023/06/02/V0UVdL.png)](https://imgloc.com/i/V0UVdL)
+[![V0Ufup.png](https://i.imgloc.com/2023/06/02/V0Ufup.png)](https://imgloc.com/i/V0Ufup)
+![V0U4HU.png](https://i.imgloc.com/2023/06/02/V0U4HU.png)
 
 
 ### 主观与讨论题内容
 
+⽐特币交易与转账的实现细节:
+比特币的转账是通过发送比特币交易来实现的。要发送比特币，发送方需要创建一个交易，并将该交易广播到比特币网络中。接收方可以在比特币网络上验证该交易，并确认接收到比特币。在转账过程中，发送方要知道接收方的比特币地址，并且钱包里的钱要足够支付转账费用和手续费，这样矿工才能将其打包到区块中。
 
+对⽐特币 UTXO 模型的理解：
+在 UTXO 模型中，比特币被视为一组未花费的交易输出，每个 UTXO 对应于一个交易输出，记录了该交易输出的金额和收款地址。当一个 UTXO 被用于支付时，它将被消耗并转换为新的 UTXO。
+
+⽐特币 UTXO 设计的必要性：
+克服了传统账户模型的缺点，并使得比特币在保护用户隐私、实现复杂交易和提高可扩展性方面具有明显的优势。
+
+ P2P 交易的基础与其特性：
+p2p交易基础在于分布式计算和共识算法，在 P2P 交易中，参与者可以通过共享数据、计算资源和存储空间来互相交换价值，而不需要依赖于中心化的机构或平台。
+特性：
+1.去中心化
+2.高效性
+3.隐私保护
+4.去信任化
 
 ---
 

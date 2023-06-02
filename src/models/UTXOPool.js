@@ -31,6 +31,32 @@ class UTXOPool {
     }
     return new UTXOPool(clonedUtxos)
   }
+
+
+
+  // 处理交易函数
+  handleTransaction(tx) {
+    if(this.isValidTransaction(tx.from,tx.value)){
+      this.utxos[tx.from].amount -= tx.value
+      if(this.utxos[tx.to]){
+        this.utxos[tx.to]+=tx.value
+      }else{
+        this.utxos[tx.to]=new UTXO(tx.value)
+      }
+    }else{
+      return
+    }
+
+  }
+
+  // 验证交易合法性
+  /**
+   * 验证余额
+   * 返回 bool 
+   */
+  isValidTransaction(address,value) {
+    return this.utxos[address] && this.utxos[address].amount >= value
+  }
 }
 
 export default UTXOPool
