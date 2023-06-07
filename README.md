@@ -190,11 +190,20 @@ https://github.com/CUITBlockchain/blockchain-in-js-workshop-2021/commit/25f3a0d8
 > 将截图上传至网盘，放入链接即可
 
 ![](链接)
+[![Vwzs08.png](https://i.imgloc.com/2023/06/07/Vwzs08.png)](https://imgloc.com/i/Vwzs08)
+[![VwzSa5.png](https://i.imgloc.com/2023/06/07/VwzSa5.png)](https://imgloc.com/i/VwzSa5)
+[![VwzvXZ.png](https://i.imgloc.com/2023/06/07/VwzvXZ.png)](https://imgloc.com/i/VwzvXZ)
+[![Vwz9JF.png](https://i.imgloc.com/2023/06/07/Vwz9JF.png)](https://imgloc.com/i/Vwz9JF)
+[![VwzKDH.png](https://i.imgloc.com/2023/06/07/VwzKDH.png)](https://imgloc.com/i/VwzKDH)
 
 
 ### 主观与讨论题内容
+⽐特币交易的处理极限:
+比特币交易的处理极限主要由比特币网络的技术能力和交易量决定。比特币网络目前的处理能力大约是每秒处理7到10笔交易。如果比特币网络处理的交易数量超过了其处理能力的极限，交易将会被延迟处理或者被拒绝。为了防止这种情况发生，比特币网络正在不断进行升级和改进，以提高其处理能力和吞吐量。例如，比特币网络正在考虑采用“闪电网络”等技术，以提高其处理能力和交易速度。
 
 
+⽐特币的区块⼤⼩与⽐特币挖矿难度的关系：
+如果比特币的区块大小过小，会导致交易拥堵和交易费用上升，矿工可能会更愿意挖掘更高交易费用的交易。这可能会增加比特币网络的挖矿难度，因为更多的算力会被吸引到比特币网络中来。因此，比特币的区块大小和挖矿难度都是比特币网络中需要密切关注和平衡的重要因素。
 
 ---
 

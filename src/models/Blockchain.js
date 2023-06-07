@@ -19,10 +19,12 @@ class Blockchain {
     return longestChain.reverse()
   }
 
+  //判断当前区块链是否包含
   containsBlock(block) {
     return block.hash in this.blocks
   }
 
+  //获得区块高度最高的区块
   maxHeightBlock() {
     let maxHeight = -1
     let maxHeightBlock = null
@@ -35,8 +37,8 @@ class Blockchain {
     return maxHeightBlock
   }
 
-
-    _addBlock(block) {
+  //添加区块
+  _addBlock(block) {
     if (!block.isValid()) return
     if (this.containsBlock(block)) return
 
