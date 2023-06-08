@@ -56,10 +56,19 @@ https://github.com/CUITBlockchain/blockchain-in-js-workshop-2021/commit/25f3a0d8
 > 将截图上传至网盘，放入链接即可
 
 ![](链接)
+[![V2UE3y.png](https://i.imgloc.com/2023/06/08/V2UE3y.png)](https://imgloc.com/i/V2UE3y)
+[![V2Ue55.png](https://i.imgloc.com/2023/06/08/V2Ue55.png)](https://imgloc.com/i/V2Ue55)
+[![V2U6i8.png](https://i.imgloc.com/2023/06/08/V2U6i8.png)](https://imgloc.com/i/V2U6i8)
+[![V2UFbZ.png](https://i.imgloc.com/2023/06/08/V2UFbZ.png)](https://imgloc.com/i/V2UFbZ)
+[![V2UGzF.png](https://i.imgloc.com/2023/06/08/V2UGzF.png)](https://imgloc.com/i/V2UGzF)
+[![V2Ud1H.png](https://i.imgloc.com/2023/06/08/V2Ud1H.png)](https://imgloc.com/i/V2Ud1H)
 
 
 ### 主观与讨论题内容
 
+如果要将字典树中的字母扩展成字母和数字的形式，可以考虑使用一个对象来表示每个节点，而不是使用一个字符。对象可以包含两个属性，一个属性用于存储节点对应的字母或数字，另一个属性用于存储子节点的映射表。
+
+如果要提高字典树查询效率，可以采用压缩节点的方式来优化，它可以将一些拥有相同前缀的节点合并为一个节点。例如，如果字典树中同时包含单词 "apple" 和 "application"，那么它们的前缀 "app" 就可以被合并为一个节点，这样可以减少节点的数量，提高查询效率。
 ---
 
 
