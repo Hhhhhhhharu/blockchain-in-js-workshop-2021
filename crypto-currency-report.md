@@ -48,7 +48,7 @@ hash函数我们通过运用sha256来实现
 
 ### 代码 commint 地址
 
-https://github.com/CUITBlockchain/blockchain-in-js-workshop-2021/commit/25f3a0d83a9fff2b4514c5503f470df939d0c2af
+https://github.com/Hhhhhhhharu/blockchain-in-js-workshop-2021/commit/62cf3ba71c036f5cccd7138a3cdfafa7d578ae9c
 
 
 ### 代码截图
@@ -85,10 +85,22 @@ https://github.com/CUITBlockchain/blockchain-in-js-workshop-2021/commit/25f3a0d8
 > 将截图上传至网盘，放入链接即可
 
 ![](链接)
+[![V2nyba.png](https://i.imgloc.com/2023/06/09/V2nyba.png)](https://imgloc.com/i/V2nyba)
+[![V2n46x.png](https://i.imgloc.com/2023/06/09/V2n46x.png)](https://imgloc.com/i/V2n46x)
+[![V2nAQk.png](https://i.imgloc.com/2023/06/09/V2nAQk.png)](https://imgloc.com/i/V2nAQk)
 
 
 ### 主观与讨论题内容
 
+以太坊中使用了一种基于字典树的数据结构，称为 Merkle Patricia Tree（MPT），它是以太坊状态树和以太坊账户树的基础。相比于传统的字典树，MPT 在以下几个方面做了改良：
+1.压缩节点：MPT 中的节点可以被压缩成四种不同的类型，分别是扩展节点、叶子节点、空节点和分支节点。这种压缩方式可以大大减少存储空间的使用，同时也减少了节点的访问时间。
+2.哈希优化：MPT 中使用哈希函数对节点进行标识，这种方式可以保证节点的唯一性，并且可以防止节点被篡改。此外，MPT 中还使用了一种特殊的哈希函数 Keccak-256，它具有高效性和安全性，可以保证节点的哈希值的唯一性和不可预测性。
+3.支持动态修改：MPT 支持动态修改，可以对树进行插入、删除和修改操作。这种特性可以使得以太坊更加灵活和可扩展。
+4.支持验证证明：MPT 支持验证证明，可以验证某个节点是否在树中，以及某个键值对是否存在于树中。这种特性可以使得以太坊更加安全和可靠。
+
+
+
+MPT 的核心问题是如何高效地存储和访问以太坊中的状态和账户信息，MPT 的设计可以充分发挥字典树的优点，提高存储效率和访问速度，同时也支持动态修改和验证证明等特性，可以满足以太坊的要求。
 
 
 ---
