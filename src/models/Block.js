@@ -83,17 +83,18 @@ class Block {
    * 
    * 需包含 UTXOPool 的更新与 hash 的更新
    */
-  addTransaction(tx) {
+  addTransaction(tx,fee) {
     // 如果交易不合法，直接结束
     // if (!this.utxoPool.isValidTransaction(tx.from, tx.value)) {
     //   return
     // }
 
     // 更新 UTXO 池中的数据
-    this.utxoPool.handleTransaction(tx)
+    this.utxoPool.handleTransaction(tx,fee)
+    //我们需要传递 fee 参数给 handleTransaction 方法，否则会出现 ReferenceError: fee is not defined 错误。
 
     // 更新区块数据并重新计算哈希值
-    this.data += `;${tx.from},${tx.to},${tx.value}`
+    this.data += `;${tx.from},${tx.to},${tx.value},${tx.fee}`
     this.hash = this.calculateHash()
   }
 }
