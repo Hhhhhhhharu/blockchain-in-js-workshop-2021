@@ -1,5 +1,6 @@
 import sha256 from 'crypto-js/sha256.js'
 import Transaction from './Transaction.js'
+import UTXOPool from './UTXOPool.js'
 export const DIFFICULTY = 3
 
 class Block {
@@ -12,7 +13,7 @@ class Block {
     this.timestamp = new Date().getTime()
     this.nonce = 0
     this.hash = this.calculateHash()
-    this.utxoPool = {}
+    this.utxoPool = new UTXOPool()
   }
 
    //计算当前区块的哈希值
