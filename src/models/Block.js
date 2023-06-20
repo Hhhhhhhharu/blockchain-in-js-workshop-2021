@@ -51,8 +51,8 @@ class Block {
 
     // 对每笔交易计算哈希值并保存
     for (let i = 0; i < transactions.length; i++) {
-      const [from, to, value] = transactions[i].split(',')
-      const trx = new Transaction(from,to,value)
+      const [from, to, value,fee] = transactions[i].split(',')
+      const trx = new Transaction(from,to,value,fee)
       hashes.push(trx.hash)
     }
 
@@ -79,6 +79,25 @@ class Block {
   }
 
 
+  isValidTransaction(tx) {
+    if (tx.from === '') {
+      // Coinbase 交易总是合法的
+      return true
+    }
+
+    // 检查交易的签名是否有效
+    if (!tx.hasValidSignature()) {
+      return false
+    }
+
+    // 检查交易输入是否在 UTXO 池中
+    const utxoPool = this.utxoPool
+    return tx.inputs.every(function (input) {
+      return utxoPool.contains(input) && utxoPool.getOutput(input).from === input.from
+    })
+  }
+
+
   // 添加交易到区块
   /**
    * 
@@ -86,14 +105,25 @@ class Block {
    */
   addTransaction(tx,fee) {
     // 如果交易不合法，直接结束
-    // if (!this.utxoPool.isValidTransaction(tx.from, tx.value)) {
-    //   return
-    // }
+    if (!this.utxoPool.isValidTransaction(tx.from, tx.value)) {
+      return
+    }
 
     // 更新 UTXO 池中的数据
-    this.utxoPool.handleTransaction(tx,fee)
+    // this.utxoPool.handleTransaction(tx,fee)
     //我们需要传递 fee 参数给 handleTransaction 方法，否则会出现 ReferenceError: fee is not defined 错误。
 
+
+    const utxoPool = this.utxoPool
+    tx.inputs.forEach(function (input) {
+      utxoPool.remove(input)
+    })
+    tx.outputs.forEach(function (output) {
+      utxoPool.add(output)
+    })
+    // 添加 coinbase 交易的输出
+    utxoPool.add(new Transaction('', tx.to, fee, 0).getOutput())
+    
     // 更新区块数据并重新计算哈希值
     this.data += `;${tx.from},${tx.to},${tx.value},${tx.fee}`
     this.hash = this.calculateHash()
